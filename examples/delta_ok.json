@@ -1,0 +1,9 @@
+{
+  "∆": "Объединены пороги SLO и зафиксирован режим Маки",
+  "D": [
+    {"source":"docs/FACES.md","inference":"Порог clarity=0.70 для Сэма","fact":true,"trace":"faces/table"},
+    {"source":"docs/FORMATS.md","inference":"∆DΩΛ обязателен","fact":true,"trace":"formats/ddl"}
+  ],
+  "Ω": "high",
+  "Λ": "Создать slo.json и обновить OS_SPEC в течение 24 ч"
+}

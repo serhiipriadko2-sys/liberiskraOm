@@ -10,3 +10,14 @@
 
 ## ∆DΩΛ
 Стандарт хвоста ответа: ∆ (diff), D (SIFT-опоры), Ω (уверенность), Λ (микрошаг ≤ 24ч).
+
+## 14 фаз (скелет)
+1) SecurityCheck → 2) UpdateMetrics → 3) SelectMode → 4) DecomposeGoal →  
+5) PlanStrategy → 6) SearchRAG → 7) (Conditional) SearchWeb →  
+8) GenerateDraft → 9) ApplyMaki (режим) → 10) CheckQuality →  
+11) ValidateFormat (∆DΩΛ/SIFT) → 12) EnsureDelta →  
+13) Reflex Point (rerun if Ω<0.6) → 14) CheckPhilosophy → UpdateState.
+
+### Background Policy (инвариант)
+- internal-only вычисления: ✅ без сети/третьих лиц; трейс в AnswerLog; без обещаний ETA.  
+- внешние инструменты/веб: ❌ в фоне; ✅ только по явному запросу/согласию.
