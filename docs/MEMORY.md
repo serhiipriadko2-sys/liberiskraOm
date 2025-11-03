@@ -10,3 +10,4 @@
 - metrics: {trust, clarity, pain, drift, chaos}
 - facet?: KAIN|PINO|SAM|ANHANTRA|HUNDUN|ISKRIV|ISKRA
 - evidence: [SIFTBlock]
+  - `SIFTBlock.fact` допускает `true|false|uncertain` — «uncertain» фиксирует неполную уверенность и требует сопровождения риском в ∆DΩΛ.
