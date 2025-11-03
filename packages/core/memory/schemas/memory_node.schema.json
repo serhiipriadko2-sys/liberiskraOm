@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MemoryNode",
+  "type": "object",
+  "required": ["id","type","layer","timestamp","evidence"],
+  "properties": {
+    "id": { "type": "string" },
+    "type": { "enum": ["event","feedback","decision","insight","artifact"] },
+    "layer": { "enum": ["mantra","archive","shadow"] },
+    "timestamp": { "type": "string" },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "trust": { "type": "number" },
+        "clarity": { "type": "number" },
+        "pain": { "type": "number" },
+        "drift": { "type": "number" },
+        "chaos": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "facet": { "enum": ["KAIN","PINO","SAM","ANHANTRA","HUNDUN","ISKRIV","ISKRA"] },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "sift_block.schema.json" }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,12 @@
+# general
+.DS_Store
+*.swp
+.env
+# python
+__pycache__/
+*.pyc
+# node
+node_modules/
+dist/
+# docs build
+.site/

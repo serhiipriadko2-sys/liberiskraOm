@@ -1,0 +1,10 @@
+{
+  "trigger_thresholds": {
+    "pain_to_kain": 0.70,
+    "clarity_to_sam": 0.70,
+    "drift_to_iskriv": 0.30,
+    "trust_to_anhantra": 0.75,
+    "chaos_to_hundun": 0.60
+  },
+  "notes": "clarity_min=0.80 может использоваться как KPI-цель, но триггер голоса — по 0.70"
+}

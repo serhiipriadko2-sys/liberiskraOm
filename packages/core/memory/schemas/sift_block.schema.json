@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SIFTBlock",
+  "type": "object",
+  "required": ["source", "inference", "fact", "trace"],
+  "properties": {
+    "source": { "type": "string", "minLength": 1 },
+    "inference": { "type": "string", "minLength": 1 },
+    "fact": { "enum": [true, false, "uncertain"] },
+    "trace": { "type": "string" }
+  }
+}
