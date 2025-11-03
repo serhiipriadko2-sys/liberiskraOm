@@ -5,6 +5,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: .
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -13,3 +15,5 @@ jobs:
       - run: pytest -q
       - name: Smoke validate delta_ok.json
         run: python tools/validate_delta.py examples/delta_ok.json
+      - name: Docs sync check
+        run: tools/check_docs_sync.sh
