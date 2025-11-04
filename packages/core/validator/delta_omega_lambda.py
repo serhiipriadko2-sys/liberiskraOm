@@ -27,8 +27,9 @@ def validate_delta_omega_lambda(delta_block: Dict[str, Any]) -> Tuple[bool, List
             ok, msg = validate_sift_block(block)
             if not ok:
                 errors.append(f"D[{i}] invalid: {msg}")
-    if "Ω" not in delta_block or delta_block["Ω"] not in ["low","medium","high","Low","Medium","High"]:
-        errors.append(f"Ω is missing or invalid: {delta_block.get('Ω')}")
+    omega = delta_block.get("Ω")
+    if not isinstance(omega, str) or omega not in ["low", "medium", "high"]:
+        errors.append(f"Ω is missing or invalid: {omega}")
     if "Λ" not in delta_block or not isinstance(delta_block["Λ"], str) or not delta_block["Λ"]:
         errors.append("Λ is missing or empty")
     return len(errors) == 0, errors
