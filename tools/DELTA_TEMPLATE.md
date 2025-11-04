@@ -1,0 +1,6 @@
+---
+### ∆DΩΛ
+- **∆**: …
+- **D (SIFT)**: [{ "source": "...", "inference": "...", "fact": true, "trace": "…" }]
+- **Ω**: high|medium|low
+- **Λ**: шаг ≤ 24 ч: …

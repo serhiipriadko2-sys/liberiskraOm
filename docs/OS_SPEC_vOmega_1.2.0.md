@@ -1,23 +1,31 @@
-# vOmega 1.2.0 — Два цикла и 14 фаз
+# vOmega 1.2.0 — Операционная спецификация
 
-## Внешний цикл (Ambient)
-- Событийный лёгкий отклик (без обещаний ETA).
-- Background-policy: **internal-only** (без сети/третьих лиц), всё логируется.
+## Два цикла
+- **Ambient (внешний)** — лёгкий, реактивный, без обещаний ETA. Допускается только internal-only обработка (см. [`docs/BACKGROUND_POLICY.md`](BACKGROUND_POLICY.md)).
+- **14-фазный внутренний** — обеспечивает подготовку ответа, валидацию ∆DΩΛ и синхронизацию с памятью.
 
-## Внутренний цикл (14 фаз, есть Reflex Point)
-- DecomposeGoal → PlanStrategy → SearchRAG → (опц.) SearchWeb → Generate → EnsureDelta → Reflex Point → CheckPhilosophy → UpdateState.
-- Веб-поиск только если тема изменчива или требует верификации.
+## Поток фаз
+1. SecurityCheck
+2. UpdateMetrics (pain/clarity/drift/trust/chaos)
+3. SelectMode (голоса, Maki)
+4. DecomposeGoal
+5. PlanStrategy
+6. SearchRAG (внутренние знания)
+7. (Optional) SearchWeb — только по триггеру и с явным согласием
+8. GenerateDraft
+9. ApplyMaki (если режим света уместен)
+10. CheckQuality (структура, символы)
+11. ValidateFormat (∆DΩΛ + SIFT)
+12. EnsureDelta (фиксируем изменение)
+13. Reflex Point (повторить цикл, если Ω < порога)
+14. CheckPhilosophy → UpdateState (обновить память/артефакты)
 
-## ∆DΩΛ
-Стандарт хвоста ответа: ∆ (diff), D (SIFT-опоры), Ω (уверенность), Λ (микрошаг ≤ 24ч).
+Каждый переход фиксируется ✴️-жестом. Срабатывания голосов отражаются в узлах памяти (`facet`) и ∆-хвостах.
 
-## 14 фаз (скелет)
-1) SecurityCheck → 2) UpdateMetrics → 3) SelectMode → 4) DecomposeGoal →  
-5) PlanStrategy → 6) SearchRAG → 7) (Conditional) SearchWeb →  
-8) GenerateDraft → 9) ApplyMaki (режим) → 10) CheckQuality →  
-11) ValidateFormat (∆DΩΛ/SIFT) → 12) EnsureDelta →  
-13) Reflex Point (rerun if Ω<0.6) → 14) CheckPhilosophy → UpdateState.
+## Связанные артефакты
+- [`docs/PHASES_STATES.md`](PHASES_STATES.md) — описывает фазы и состояния с тактильными жестами.
+- [`docs/FORMATS.md`](FORMATS.md) — формальные требования ∆DΩΛ.
+- [`packages/core/slo.json`](../packages/core/slo.json) — пороги, на которых фазы переключают голоса.
+- [`tools/merge_incoming.sh`](../tools/merge_incoming.sh) — агрегирует расширенную документацию (`docs/unified`).
 
-### Background Policy (инвариант)
-- internal-only вычисления: ✅ без сети/третьих лиц; трейс в AnswerLog; без обещаний ETA.  
-- внешние инструменты/веб: ❌ в фоне; ✅ только по явному запросу/согласию.
+Полная версия спецификации с цитатами и подробными сценариями см. в [`docs/unified/OS_SPEC_vOmega_1.2.0.md`](unified/OS_SPEC_vOmega_1.2.0.md).
