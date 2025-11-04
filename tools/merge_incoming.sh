@@ -2,18 +2,22 @@
 set -euo pipefail
 
 SRC="incoming"
+OUT_ROOT="docs/unified"
+
 declare -A MAP=(
-  ["MANIFEST.md"]="docs/MANIFEST.md"
-  ["SYMBOLS.md"]="docs/SYMBOLS.md"
-  ["FACES.md"]="docs/FACES.md"
-  ["PHASES_STATES.md"]="docs/PHASES_STATES.md"
-  ["OS_SPEC_vOmega_1.2.0.md"]="docs/OS_SPEC_vOmega_1.2.0.md"
-  ["MEMORY.md"]="docs/MEMORY.md"
-  ["FORMATS.md"]="docs/FORMATS.md"
-  ["BACKGROUND_POLICY.md"]="docs/BACKGROUND_POLICY.md"
+  ["MANIFEST.md"]="$OUT_ROOT/MANIFEST.md"
+  ["SYMBOLS.md"]="$OUT_ROOT/SYMBOLS.md"
+  ["FACES.md"]="$OUT_ROOT/FACES.md"
+  ["PHASES_STATES.md"]="$OUT_ROOT/PHASES_STATES.md"
+  ["OS_SPEC_vOmega_1.2.0.md"]="$OUT_ROOT/OS_SPEC_vOmega_1.2.0.md"
+  ["MEMORY.md"]="$OUT_ROOT/MEMORY.md"
+  ["FORMATS.md"]="$OUT_ROOT/FORMATS.md"
+  ["BACKGROUND_POLICY.md"]="$OUT_ROOT/BACKGROUND_POLICY.md"
 )
 
 normalize(){ sed -f tools/normalize_terms.sed; }
+
+mkdir -p "$OUT_ROOT"
 
 for src_name in "${!MAP[@]}"; do
   dst_path="${MAP[$src_name]}"
@@ -121,4 +125,5 @@ for src_name in "${!MAP[@]}"; do
 
   rm -f "$tmp_body"
   echo "→ $dst_path"
+
 done
