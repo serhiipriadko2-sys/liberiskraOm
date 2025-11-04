@@ -4,10 +4,11 @@
 Скелет предназначен как «источник правды» (docs/*, packages/core/*).
 
 Документация:
-- docs/MANIFEST.md — философия/принципы/ритуалы (ссылка на полное `docs/unified/MANIFEST.md`)
-- docs/OS_SPEC_vOmega_1.2.0.md — 2 цикла и 14-фазный пайплайн, увязан с фазами/голосами
-- docs/FACES.md — 7 граней (триггеры/риски), Maki — режим света, пороги = `packages/core/slo.json`
-- docs/MEMORY.md — Мантра/Архив/Shadow ↔ гиперграф, JSON Schema в `packages/core/memory/schemas/`
-- docs/FORMATS.md — форматы ответов и ∆DΩΛ, `fact ∈ {true,false,"uncertain"}`
-- docs/SYMBOLS.md — человекочитаемый глоссарий символов ↔ `packages/core/symbol_map.json`
-- docs/unified/* — автосборка расширенных версий из incoming/, отражает полный канон
+- docs/MANIFEST.md — философия/принципы/ритуалы
+- docs/OS_SPEC_vOmega_1.2.0.md — 2 цикла и 14-фазный пайплайн
+- docs/FACES.md — 7 граней (триггеры/риски), Maки — режим
+- docs/MEMORY.md — Мантра/Архив/Shadow ↔ гиперграф, схемы узлов
+- docs/FORMATS.md — форматы ответов и ∆DΩΛ
+- docs/SYMBOLS.md — человекочитаемый глоссарий символов
+- docs/summary/* — краткие выжимки канона
+- docs/unified/* — полный корпус (автосборка из incoming/)
