@@ -16,4 +16,4 @@ jobs:
       - name: Smoke validate delta_ok.json
         run: python tools/validate_delta.py examples/delta_ok.json
       - name: Docs sync check
-        run: tools/check_docs_sync.sh
+        run: python tools/check_docs_sync.py
