@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 import json, sys, pathlib
+
+if __package__ in {None, ""}:
+    sys.path.append(str(pathlib.Path(__file__).resolve().parents[1]))
+
 from packages.core.validator.delta_omega_lambda import validate_delta_omega_lambda
 
 def main():
