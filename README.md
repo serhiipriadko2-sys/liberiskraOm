@@ -16,10 +16,15 @@
    source .venv/bin/activate
    pip install -r requirements.txt  # при необходимости
    ```
-2. **Запустить тесты и валидаторы**:
+2. **Запустить тесты и валидаторы** (рекомендация — единая команда):
+   ```bash
+   make check
+   ```
+   Если `make` недоступен, выполните шаги вручную:
    ```bash
    pytest -q
-   python tools/validate_delta.py examples/delta_ok.json
+   python tools/check_docs_sync.py
+   python tools/validate_delta.py --examples
    ```
 3. **Работать с документацией**: все файлы — в `docs/` (см. структуру выше). Обновления канона фиксируются через ∆DΩΛ и `ops/canon_review`.
 
