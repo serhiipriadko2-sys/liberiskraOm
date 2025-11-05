@@ -78,8 +78,10 @@ if [[ ${#missing_in_readme[@]} -gt 0 ]]; then
 fi
 
 conflict_pattern='(?<!\\)<{7} '
-conflict_hits=$(git -C "$ROOT_DIR" ls-files -z \
-  | xargs -0 -r rg -nP "$conflict_pattern" || true)
+# BSD xargs (macOS) не поддерживает опцию -r, поэтому используем прямой вызов rg
+# по корню репозитория. ripgrep уважает .gitignore и .rgignore, так что список
+# файлов будет сопоставим с отслеживаемыми путями.
+conflict_hits=$(rg -nP --color=never "$conflict_pattern" "$ROOT_DIR" || true)
 if [[ -n "$conflict_hits" ]]; then
   err "Обнаружены нерешённые маркеры конфликта в файлах:";
   printf '%s\n' "$conflict_hits" >&2
