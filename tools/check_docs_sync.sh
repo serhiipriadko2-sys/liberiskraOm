@@ -77,4 +77,13 @@ if [[ ${#missing_in_readme[@]} -gt 0 ]]; then
   err "Ссылки из docs/index.md отсутствуют в README: ${missing_in_readme[*]}"; exit 1
 fi
 
+conflict_pattern='(?<!\\)<{7} '
+conflict_hits=$(git -C "$ROOT_DIR" ls-files -z \
+  | xargs -0 -r rg -nP "$conflict_pattern" || true)
+if [[ -n "$conflict_hits" ]]; then
+  err "Обнаружены нерешённые маркеры конфликта в файлах:";
+  printf '%s\n' "$conflict_hits" >&2
+  exit 1
+fi
+
 echo "Документация синхронизирована: README и docs/index.md содержат одинаковые разделы."
