@@ -25,6 +25,17 @@ PORTAL_HEADER = "## Основные разделы"
 README_DOC_PATTERN = re.compile(r"docs/[A-Za-z0-9_.\-/]+\.md")
 PORTAL_DOC_PATTERN = re.compile(r"\((\d\d_[A-Za-z0-9_.\-/]+\.md)\)")
 CONFLICT_LITERAL = "<" * 7 + " "
+FENCE_CHARS = ("`", "~")
+
+
+def _count_leading_characters(line: str, char: str) -> int:
+    count = 0
+    for symbol in line:
+        if symbol == char:
+            count += 1
+        else:
+            break
+    return count
 
 
 def error(message: str) -> None:
@@ -90,6 +101,31 @@ def _has_conflict_marker(line: str) -> bool:
         start = idx + 1
 
 
+def _find_nearby_fence(
+    lines: Sequence[str],
+    start: int,
+    step: int,
+    limit: int,
+    expected_char: str | None = None,
+) -> tuple[str, int, int] | None:
+    remaining = limit
+    idx = start
+    while 0 <= idx < len(lines) and remaining > 0:
+        stripped = lines[idx].strip()
+        if stripped:
+            for char in FENCE_CHARS:
+                if expected_char is not None and char != expected_char:
+                    continue
+                if not stripped.startswith(char * 3):
+                    continue
+                run_length = _count_leading_characters(stripped, char)
+                if run_length >= 3:
+                    return char, run_length, idx
+        idx += step
+        remaining -= 1
+    return None
+
+
 def find_conflict_markers(paths: Iterable[Path], root: Path) -> list[str]:
     results: list[str] = []
     for path in paths:
@@ -97,8 +133,24 @@ def find_conflict_markers(paths: Iterable[Path], root: Path) -> list[str]:
             text = path.read_text(encoding="utf-8")
         except UnicodeDecodeError:
             continue
-        for lineno, line in enumerate(text.splitlines(), start=1):
+        lines = text.splitlines()
+        skip_fences = path.suffix.lower() in {".md", ".mdx"}
+        for lineno, line in enumerate(lines, start=1):
             if _has_conflict_marker(line):
+                if skip_fences:
+                    index = lineno - 1
+                    opening = _find_nearby_fence(lines, index - 1, -1, limit=50)
+                    if opening is not None:
+                        _, _, start_idx = opening
+                        closing = _find_nearby_fence(
+                            lines,
+                            index + 1,
+                            1,
+                            limit=50,
+                            expected_char=opening[0],
+                        )
+                        if closing is not None and start_idx < index < closing[2]:
+                            continue
                 rel = path.relative_to(root)
                 results.append(f"{rel}:{lineno}:{line.strip()}")
     return results
