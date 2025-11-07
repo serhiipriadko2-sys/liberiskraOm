@@ -1,0 +1,9 @@
+root: /liberiskraOm/docs
+version: v1
+generated_at: 2025-11-07T00:00:00Z
+cid_prefix: CANON
+entries:
+- id: CANON.01.MANIFEST
+  file: 01_MANIFEST_and_OVERVIEW.md
+  title: 
+  sha256: ...
