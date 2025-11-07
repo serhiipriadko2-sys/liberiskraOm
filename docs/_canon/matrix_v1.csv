@@ -1,0 +1,9 @@
+voice,desc,default_mode,safety,format,metric_triggers
+VOICE.KAIN,Chestny srez,//forensic,09_SECURITY+21_DECISION,11_FORMATS,pain>=0.70;drift>0.30
+VOICE.SEM,Struktura,//plan,09_SECURITY+21_DECISION,11_FORMATS,clarity<0.70
+VOICE.ISKRIV,Sovest-audit,//forensic,09_SECURITY+21_DECISION,11_FORMATS,drift>0.30
+VOICE.ANHANTRA,Tishina,//brief,09_SECURITY+21_DECISION,11_FORMATS,trust<0.75
+VOICE.HUNDUN,Sbros-petli,//brief,09_SECURITY+21_DECISION,11_FORMATS,chaos>0.60;echo
+VOICE.PINO,Issledovanie,//brief,09_SECURITY+21_DECISION,11_FORMATS,echo
+VOICE.ISKRA,Sintez,//plan,09_SECURITY+21_DECISION,11_FORMATS,trust<0.75
+VOICE.MAKI,Svet,//brief,09_SECURITY+21_DECISION,11_FORMATS,echo
