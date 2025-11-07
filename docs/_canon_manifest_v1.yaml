@@ -1,0 +1,145 @@
+root: /liberiskraOm/docs
+version: v1
+generated_at: '2025-11-07T03:34:01.829683Z'
+cid_prefix: CANON
+entries:
+- id: CANON..NOJEKYLL
+  file: .nojekyll
+  title: ''
+  sha256: 54a19604056ad053708b998c2e76259af2699bd9cdb79620ec5cd1ed33b91987
+  size_bytes: 55
+- id: CANON.01.MANIFEST
+  file: 01_MANIFEST_and_OVERVIEW.md
+  title: 01 MANIFEST and OVERVIEW.md
+  sha256: 7c46b9b91da03442862892ff5cab2095345e89add1a66cfa8f8f8895dd6645e6
+  size_bytes: 193476
+- id: CANON.02.CANON
+  file: 02_CANON_and_PRINCIPLES.md
+  title: 02 CANON and PRINCIPLES.md
+  sha256: 0970a9684f01b56e587aef23a10e80af09a6c18f4c276af1b0225d143e334e02
+  size_bytes: 1454522
+- id: CANON.03.ARCHITECTURE
+  file: 03_ARCHITECTURE_and_SYSTEM_DESIGN.md
+  title: 03 ARCHITECTURE and SYSTEM DESIGN.md
+  sha256: afdca8cd79b1e04eb15e1725f0eb87df64f96bab0d4648e82c5a0b54ff3dfa7f
+  size_bytes: 765755
+- id: CANON.04.FACETS
+  file: 04_FACETS_VOICES_and_PROTOCOLS.md
+  title: 04 FACETS VOICES and PROTOCOLS.md
+  sha256: 08f0917f0cecdf73806e0c167037c574ce7d701fea9ae8a12be023e3bbefc7ca
+  size_bytes: 349220
+- id: CANON.05.METRICS
+  file: 05_METRICS_and_RHYTHM_INDEX.md
+  title: 05 METRICS and RHYTHM INDEX.md
+  sha256: 7beecb375b79b9a6a29f7feac0fa415db142257aed4b242adc5ae016752d82bb
+  size_bytes: 91398
+- id: CANON.06.PHASES
+  file: 06_PHASES_STATES_PIPELINES.md
+  title: 06 PHASES STATES PIPELINES.md
+  sha256: 44aa4fc9055b1a1e313da5b32190e4edb7df5837309edf05faeb07052630a6db
+  size_bytes: 207507
+- id: CANON.07.MEMORY
+  file: 07_MEMORY_SYSTEM.md
+  title: 07 MEMORY SYSTEM.md
+  sha256: 4fad2c179692ade586d92d13ee39124e272a65fe74ed6062ba1650559e23cdb8
+  size_bytes: 646514
+- id: CANON.08.RITUALS
+  file: 08_RITUALS_and_RITES.md
+  title: 08 RITUALS and RITES.md
+  sha256: 6b77db2b426e6844ac55de735091ca1d2d77bd3f85a8f8d79394a2f28783be71
+  size_bytes: 306198
+- id: CANON.09.SECURITY
+  file: 09_SECURITY_SAFETY_COMPLIANCE.md
+  title: 09 SECURITY SAFETY COMPLIANCE.md
+  sha256: 0ef00a796a40a2e45fd627c3d842d5f21c6cbc427449927c86f03b9ac7636cb0
+  size_bytes: 30448
+- id: CANON.10.RAG
+  file: 10_RAG_SOURCES_and_SIFT.md
+  title: 10 RAG SOURCES and SIFT.md
+  sha256: e4f8907268655b42cf4ba77b929b84436e805300ee55fa3ab39d738c9f828c0f
+  size_bytes: 23286
+- id: CANON.11.FORMATS
+  file: 11_FORMATS_TEMPLATES_STYLES.md
+  title: 11 FORMATS TEMPLATES STYLES.md
+  sha256: 49e2a325501f6eb3334f1784ab5be6e174f25eacc7bc397602aab943998a4861
+  size_bytes: 88385
+- id: CANON.12.WORKFLOWS
+  file: 12_WORKFLOWS_AUTOMATIONS.md
+  title: 12 WORKFLOWS AUTOMATIONS.md
+  sha256: 354420a318f8a0ecea9f28e864a8cd1aa981e43f5dc23d99d33972bef85145cd
+  size_bytes: 113
+- id: CANON.13.IMPLEMENTATION
+  file: 13_IMPLEMENTATION_CODE_CORE.md
+  title: 13 IMPLEMENTATION CODE CORE.md
+  sha256: edc5115e04b5efbe77a6d2a6a95ae4a628c35d78180aa7df9f60ba7171ebe41f
+  size_bytes: 3429385
+- id: CANON.14.TOOLS
+  file: 14_TOOLS_CONNECTORS.md
+  title: 14 TOOLS CONNECTORS.md
+  sha256: 133b7853a0ec7530b2062a05c493f1a3190aa4eb4fc66a643326bc04223a9a47
+  size_bytes: 111
+- id: CANON.15.TESTS
+  file: 15_TESTS_CHECKLISTS_VALIDATORS.md
+  title: 15 TESTS CHECKLISTS VALIDATORS.md
+  sha256: 54401984a0b4bd3c534917dc9cf4e92f9c7634dae2606d8bb66bf9e5b680ef6a
+  size_bytes: 115
+- id: CANON.16.OPERATIONS
+  file: 16_OPERATIONS_and_CANON_REVIEW.md
+  title: 16 OPERATIONS and CANON REVIEW.md
+  sha256: c8f65b060e7d484b1c1ddd520a499955ca136eaf50e8ad1722781b52e482e6a3
+  size_bytes: 1086236
+- id: CANON.17.JOURNALS
+  file: 17_JOURNALS_LOGS_SHADOW_part1.md
+  title: 17 JOURNALS LOGS SHADOW.md
+  sha256: f01a980cc556c223ab36f970529d927cdf9c18637bca8c79f3a99be507d8abbb
+  size_bytes: 16140773
+- id: CANON.17.JOURNALS
+  file: 17_JOURNALS_LOGS_SHADOW_part2.md
+  title: Нестандартные форматы сотрудничества Искры и Кати
+  sha256: 9136769bbae25fc1ade02ad6699a88659bb49af0b4018ee11e355c48deb5822e
+  size_bytes: 15639026
+- id: CANON.17.JOURNALS
+  file: 17_JOURNALS_LOGS_SHADOW_part3.md
+  title: 'Екатерина Викторовна Габран: аналитический обзор публичных данных'
+  sha256: 16d341ed1ae16587a245bceb3a29f9f5ac053d641f1e28788bdd259d9d186762
+  size_bytes: 15925695
+- id: CANON.18.GUIDES
+  file: 18_GUIDES_EXAMPLES_TUTORIALS.md
+  title: 18 GUIDES EXAMPLES TUTORIALS.md
+  sha256: dcc8493ee3fc79483f5032d05374696720b069dec07d1c6cfdf22ba381dba001
+  size_bytes: 94736
+- id: CANON.19.PRESS
+  file: 19_PRESS_NEWS_RELEASES.md
+  title: 19 PRESS NEWS RELEASES.md
+  sha256: 51dace6de2eeb5149d1faa7831f1bf947d3445916d9287593db863c85afb8341
+  size_bytes: 115
+- id: CANON.20.GLOSSARY
+  file: 20_GLOSSARY_ONTOLOGY_SEMANTICS.md
+  title: 20 GLOSSARY ONTOLOGY SEMANTICS.md
+  sha256: 5cb39c906bea5c14d5dfc427b890cdf4460c468ce9c29ac640dd7b6c6df9c82b
+  size_bytes: 409756
+- id: CANON.21.DECISION
+  file: 21_DECISION_TREES_and_POLICIES.md
+  title: 21 DECISION TREES and POLICIES.md
+  sha256: 6e58da560875b93612a314ab4de8adcc89994d8df5dc4e029bfeb62bc2b65c2f
+  size_bytes: 42191
+- id: CANON.22.MAPPINGS
+  file: 22_MAPPINGS_CROSSWALKS_INDEX.md
+  title: 22 MAPPINGS CROSSWALKS INDEX.md
+  sha256: cdaa1fb114fb423acab7c8e25e7890fa4f6e164caa09c40f4f509b029157da20
+  size_bytes: 34793
+- id: CANON.DIALOGS
+  file: DIALOGS_FULL_v3.md
+  title: Диалоги Искры — Полный архив v3 (временная шкала)
+  sha256: f4b64f0a7c4004d47e1a552cf179dae40bacea170994da9d22aa61f7702daa87
+  size_bytes: 23799182
+- id: CANON.MANTRA
+  file: MANTRA.md
+  title: LIBER IGNIS — **MANTRA.md**
+  sha256: 4f73040e5d2d083899371311270a5e42f8f59a7265a032439cc9996533f5cb11
+  size_bytes: 9320
+- id: CANON.INDEX
+  file: index.md
+  title: Добро пожаловать в liberiskraOm
+  sha256: 89407d01c36de56cdde3a590c1c1c26e096ad345525b52ac511d7929d1b2922f
+  size_bytes: 2004

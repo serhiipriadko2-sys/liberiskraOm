@@ -1,0 +1,61 @@
+{
+  "docs_dir": "/sandbox/verify_extract/искраКанон/liberiskraOm/docs",
+  "total_files_in_dir": 28,
+  "missing_expected_files": [],
+  "extra_files_not_in_expected_list": [],
+  "files_with_non_iso_dates_gt0": [
+    "02_CANON_and_PRINCIPLES.md",
+    "03_ARCHITECTURE_and_SYSTEM_DESIGN.md",
+    "07_MEMORY_SYSTEM.md",
+    "10_RAG_SOURCES_and_SIFT.md",
+    "13_IMPLEMENTATION_CODE_CORE.md",
+    "16_OPERATIONS_and_CANON_REVIEW.md",
+    "17_JOURNALS_LOGS_SHADOW_part1.md",
+    "17_JOURNALS_LOGS_SHADOW_part2.md",
+    "17_JOURNALS_LOGS_SHADOW_part3.md",
+    "20_GLOSSARY_ONTOLOGY_SEMANTICS.md",
+    "DIALOGS_FULL_v3.md"
+  ],
+  "files_without_any_iso_dates": [
+    ".nojekyll",
+    "06_PHASES_STATES_PIPELINES.md",
+    "09_SECURITY_SAFETY_COMPLIANCE.md",
+    "10_RAG_SOURCES_and_SIFT.md",
+    "11_FORMATS_TEMPLATES_STYLES.md",
+    "12_WORKFLOWS_AUTOMATIONS.md",
+    "14_TOOLS_CONNECTORS.md",
+    "15_TESTS_CHECKLISTS_VALIDATORS.md",
+    "19_PRESS_NEWS_RELEASES.md",
+    "21_DECISION_TREES_and_POLICIES.md",
+    "22_MAPPINGS_CROSSWALKS_INDEX.md",
+    "MANTRA.md",
+    "index.md"
+  ],
+  "files_without_delta_block": [
+    ".nojekyll",
+    "06_PHASES_STATES_PIPELINES.md",
+    "09_SECURITY_SAFETY_COMPLIANCE.md",
+    "12_WORKFLOWS_AUTOMATIONS.md",
+    "14_TOOLS_CONNECTORS.md",
+    "15_TESTS_CHECKLISTS_VALIDATORS.md",
+    "17_JOURNALS_LOGS_SHADOW_part1.md",
+    "19_PRESS_NEWS_RELEASES.md",
+    "20_GLOSSARY_ONTOLOGY_SEMANTICS.md",
+    "22_MAPPINGS_CROSSWALKS_INDEX.md"
+  ],
+  "files_mentioning_sift": [
+    "01_MANIFEST_and_OVERVIEW.md",
+    "02_CANON_and_PRINCIPLES.md",
+    "03_ARCHITECTURE_and_SYSTEM_DESIGN.md",
+    "04_FACETS_VOICES_and_PROTOCOLS.md",
+    "05_METRICS_and_RHYTHM_INDEX.md",
+    "07_MEMORY_SYSTEM.md",
+    "10_RAG_SOURCES_and_SIFT.md",
+    "11_FORMATS_TEMPLATES_STYLES.md",
+    "13_IMPLEMENTATION_CODE_CORE.md",
+    "16_OPERATIONS_and_CANON_REVIEW.md",
+    "17_JOURNALS_LOGS_SHADOW_part2.md",
+    "18_GUIDES_EXAMPLES_TUTORIALS.md",
+    "MANTRA.md"
+  ]
+}
