@@ -1,0 +1,63 @@
+name: canon-ops
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  lint-canon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: pip install pyyaml
+      - name: Canon checks (CID manifest, ISO dates, matrix)
+        run: |
+          python - << 'PY'
+          import os, re, sys, json, yaml
+
+          manifest_path = "docs/_canon/_canon_manifest_v1.yaml"
+          if not os.path.isfile(manifest_path):
+            print(f"::error file={manifest_path},title=Missing CID manifest::_canon_manifest_v1.yaml not found in docs/_canon")
+            sys.exit(1)
+
+          with open(manifest_path, 'r', encoding='utf-8') as f:
+            man = yaml.safe_load(f)
+
+          entries = man.get("entries", [])
+          missing = []
+          for e in entries:
+            p = os.path.join("docs", e.get("file",""))
+            if e.get("file") and not os.path.isfile(p):
+              missing.append(e["file"])
+          if missing:
+            print(f"::error title=CID manifest mismatch::Entries missing in repo: {missing}")
+            sys.exit(1)
+
+          def scan_file(path):
+            with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+              t = f.read()
+            iso = re.findall(r"\b\d{4}-\d{2}-\d{2}\b", t)
+            non_iso = re.findall(r"\b\d{1,2}[./]\d{1,2}[./]\d{2,4}\b", t) + re.findall(r"\b\d{1,2}\s+[A-Za-zА-Яа-яЁё]+\s+\d{4}\b", t)
+            has_delta = "∆DΩΛ" in t
+            return dict(iso=len(iso), non_iso=len(non_iso), delta=has_delta)
+
+          problems = []
+          for name in os.listdir("docs"):
+            if name.endswith(".md") and name != "DIALOGS_FULL_v3.md":
+              r = scan_file(os.path.join("docs", name))
+              if r["non_iso"]>0:
+                problems.append((name, "non-ISO-dates"))
+          if problems:
+            print(f"::warning title=Non-ISO date patterns found::{problems}")
+
+          matrix_path = "docs/_canon/matrix_v1.csv"
+          if not os.path.isfile(matrix_path):
+            print(f"::warning file={matrix_path},title=Matrix missing::matrix_v1.csv not found in docs/_canon")
+
+          print("Canon checks PASS (warnings do not fail the build)." )
+          PY
