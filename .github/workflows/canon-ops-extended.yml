@@ -15,4 +15,6 @@ jobs:
           python-version: '3.11'
       - name: Validate anchors + matrix + dry-run decide/enforce
         run: |
-          echo START
+          python - << 'PY'
+          print('stub')
+          PY
