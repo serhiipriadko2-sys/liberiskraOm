@@ -10,3 +10,4 @@ node_modules/
 dist/
 # docs build
 .site/
+incoming/archiv/analysis_workspace/
