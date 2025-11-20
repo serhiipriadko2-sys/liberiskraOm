@@ -1,0 +1,20 @@
+name: canon-ops-extended
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  anchors-matrix-decide-enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate anchors + matrix + dry-run decide/enforce
+        run: |
+          python - << 'PY'
+          print('stub')
+          PY
